@@ -11,10 +11,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Anchor,
 		C3.Behaviors.jumpthru,
 		C3.Plugins.Audio,
+		C3.Plugins.LocalStorage,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Acts.SetMirrored,
 		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Cnds.IsGroupActive,
@@ -25,7 +26,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Exps.int,
-		C3.Behaviors.Platform.Exps.VectorX
+		C3.Behaviors.Platform.Exps.VectorX,
+		C3.Plugins.System.Cnds.Compare
 	];
 };
 self.C3_JsPropNameTable = [
@@ -64,6 +66,8 @@ self.C3_JsPropNameTable = [
 	{TiledBackground7: 0},
 	{Sprite10: 0},
 	{dist: 0},
+	{highscore: 0},
+	{LocalStorage: 0},
 	{seconds: 0},
 	{minutes: 0},
 	{metres: 0},
@@ -101,5 +105,7 @@ self.InstanceType = {
 	counterdeath: class extends self.ITextInstance {},
 	TiledBackground7: class extends self.ITiledBackgroundInstance {},
 	Sprite10: class extends self.ISpriteInstance {},
-	dist: class extends self.ITextInstance {}
+	dist: class extends self.ITextInstance {},
+	highscore: class extends self.ITextInstance {},
+	LocalStorage: class extends self.IInstance {}
 }
